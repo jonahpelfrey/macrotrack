@@ -17,7 +17,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     //OUTLETS
-
+    @IBOutlet weak var proteinTextField: UITextField!
+    @IBOutlet weak var caloriesTextField: UITextField!
+    @IBOutlet weak var carbsTextField: UITextField!
+    
+    @IBOutlet weak var popupCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var gramsOfProtein: UILabel!
@@ -29,28 +33,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var numberOfCarbs: UILabel!
     @IBOutlet weak var carbProgressBar: UIProgressView!
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.proteinProgressBar.progress = 0
         self.carbProgressBar.progress = 0
         self.calorieProgressBar.progress = 0
-        
-        
-//        self.proteinProgressBar.animate(duration: 10)
+        //self.proteinProgressBar.animate(duration: 10)
         
     }
     
     
     //FUNCTIONS
-    func retrieveProgress() {
+    @IBAction func addNutrients(_ sender: Any) {
+        self.popupCenterConstraint.constant = 400
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.layoutIfNeeded()
+        })
         
     }
     
-    func retrieveGoals() {
+    @IBAction func addNewEntry(_ sender: Any) {
+        self.popupCenterConstraint.constant = 0;
         
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
