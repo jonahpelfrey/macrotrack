@@ -20,6 +20,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var proteinTextField: UITextField!
     @IBOutlet weak var caloriesTextField: UITextField!
     @IBOutlet weak var carbsTextField: UITextField!
+    @IBOutlet weak var fatTextField: UITextField!
+    @IBOutlet weak var sugarTextField: UITextField!
     
     @IBOutlet weak var popupCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var dateLabel: UILabel!
@@ -33,7 +35,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var numberOfCarbs: UILabel!
     @IBOutlet weak var carbProgressBar: UIProgressView!
     
+    @IBOutlet weak var numberOfFats: UILabel!
+    @IBOutlet weak var fatProgressBar: UIProgressView!
     
+    @IBOutlet weak var numberOfSugars: UILabel!
+    @IBOutlet weak var sugarProgressBar: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,16 +48,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.calorieProgressBar.progress = 0
         //self.proteinProgressBar.animate(duration: 10)
         
+        
+        
     }
     
     
     //FUNCTIONS
     @IBAction func addNutrients(_ sender: Any) {
-        self.popupCenterConstraint.constant = 400
+        self.popupCenterConstraint.constant = -400
         
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
         })
+        
+        //Save numbers
+        
+        //Reset text fields
         
     }
     
