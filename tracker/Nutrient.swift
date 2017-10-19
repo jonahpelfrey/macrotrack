@@ -60,6 +60,14 @@ class Nutrient{
     {
         self.targetLevel = newGoal
     }
+    
+    func reset()
+    {
+        self.currentLevel = 0;
+        self.progressBar.animate(progress: 0.0)
+        self.label.text = "\(self.currentLevel)"
+        UserDefaults.standard.set(self.currentLevel, forKey: self.key)
+    }
 }
 
 extension UIProgressView {

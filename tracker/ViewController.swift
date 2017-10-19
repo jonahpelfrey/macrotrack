@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
     
     var nutrientItems = [Nutrient]()
+    
 
     //OUTLETS
     @IBOutlet weak var popupCenterConstraint: NSLayoutConstraint!
@@ -45,8 +46,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.fatProgressBar.progress = 0
         self.sugarProgressBar.progress = 0
         
+        loadCurrentDate()
         createNutrients()
         loadUserData()
+    }
+    
+    func loadCurrentDate()
+    {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        
+        let dateString = formatter.string(from: date)
+        self.dateLabel.text = dateString
     }
     
     
@@ -69,6 +81,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     {
         for item in nutrientItems {
             item.loadSavedProgress()
+        }
+    }
+    
+    @IBAction func resetValues(_ sender: Any) {
+        
+        for item in nutrientItems {
+            item.reset()
         }
     }
     
