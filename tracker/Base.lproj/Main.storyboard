@@ -50,7 +50,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plV-5N-YTx">
                                 <rect key="frame" x="240" y="261" width="100" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="HXM-st-yo2"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="HXM-st-yo2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -87,7 +87,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFx-o0-6So">
                                 <rect key="frame" x="35" y="261" width="100" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="01I-0C-pZf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="01I-0C-pZf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                 <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5t-uj-c2S">
                                 <rect key="frame" x="35" y="396" width="100" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Lhc-h2-gVL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Lhc-h2-gVL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -145,7 +145,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sX-Ts-nZj">
                                 <rect key="frame" x="240" y="396" width="100" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="3Ab-av-8cw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="3Ab-av-8cw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -295,7 +295,7 @@
                                 <rect key="frame" x="164" y="617" width="47" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BWf-pd-zMC"/>
-                                    <constraint firstAttribute="width" constant="47" id="Z7J-Rn-eO8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="Z7J-Rn-eO8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Reset"/>
