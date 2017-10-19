@@ -64,13 +64,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 let oldNutrient = Int(labelText) else { return }
         
         label.text = "\(nutrient + oldNutrient)"
+        textField.text = ""
     }
     
     @IBAction func addNutrients(_ sender: Any) {
         
-        
+        for (textField, label) in nutrientItems {
+            populateLabel(textField: textField, label: label)
+        }
         animateOut()
-        clearFields()
     }
     
     @IBAction func addNewEntry(_ sender: Any) {
@@ -98,14 +100,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
         })
-    }
-    
-    func clearFields() {
-        proteinTextField.text = ""
-        caloriesTextField.text = ""
-        sugarTextField.text = ""
-        fatTextField.text = ""
-        carbsTextField.text = ""
     }
     
     func setupProgressBars() {
