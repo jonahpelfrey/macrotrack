@@ -10,13 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    //CLASS
-    var proteinGoal: Int = 0
-    var calorieGoal: Int = 0
-    var carbGoal: Int = 0
-    
-    var nutrientItems = [UITextField: UILabel]()
-    
+    var nutrientItems = [Nutrient]()
+
     //OUTLETS
     @IBOutlet weak var popupCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var dateLabel: UILabel!
@@ -44,33 +39,45 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupProgressBars()
+        self.proteinProgressBar.progress = 0
+        self.carbProgressBar.progress = 0
+        self.calorieProgressBar.progress = 0
+        self.fatProgressBar.progress = 0
+        self.sugarProgressBar.progress = 0
         
-        nutrientItems[proteinTextField] = gramsOfProtein
-        nutrientItems[carbsTextField] = numberOfCarbs
-        nutrientItems[sugarTextField] = numberOfSugars
-        nutrientItems[fatTextField] = numberOfFats
-        nutrientItems[caloriesTextField] = numberOfCalories
+        createNutrients()
+        loadUserData()
     }
     
     
-    //FUNCTIONS
-    
-    func populateLabel(textField: UITextField, label: UILabel)
+    func createNutrients()
     {
-        guard let tfText = textField.text,
-                let nutrient = Int(tfText),
-                let labelText = label.text,
-                let oldNutrient = Int(labelText) else { return }
+        let protein = Nutrient(textField: proteinTextField, label: gramsOfProtein, progressBar: proteinProgressBar, targetLevel: 160, key: "protein")
         
-        label.text = "\(nutrient + oldNutrient)"
-        textField.text = ""
+        let carbs = Nutrient(textField: carbsTextField, label: numberOfCarbs, progressBar: carbProgressBar, targetLevel: 100, key: "carbs")
+        
+        let calories = Nutrient(textField: caloriesTextField, label: numberOfCalories, progressBar: calorieProgressBar, targetLevel: 3000, key: "calories")
+        
+        let fats = Nutrient(textField: fatTextField, label: numberOfFats, progressBar: fatProgressBar, targetLevel: 50, key: "fats")
+        
+        let sugars = Nutrient(textField: sugarTextField, label: numberOfSugars, progressBar: sugarProgressBar, targetLevel: 75, key: "sugars")
+        
+        self.nutrientItems += [protein, carbs, calories, fats, sugars]
+    }
+    
+    func loadUserData()
+    {
+        for item in nutrientItems {
+            item.loadSavedProgress()
+        }
     }
     
     @IBAction func addNutrients(_ sender: Any) {
         
-        for (textField, label) in nutrientItems {
-            populateLabel(textField: textField, label: label)
+        
+        for item in nutrientItems {
+            item.populateLabel()
+            item.updateProgressBar()
         }
         animateOut()
     }
@@ -102,32 +109,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    func setupProgressBars() {
-        
-        //Check user defaults
-        //self.proteinProgressBar.animate(duration: 10)
-        
-        //else
-        self.proteinProgressBar.progress = 0
-        self.carbProgressBar.progress = 0
-        self.calorieProgressBar.progress = 0
-        self.fatProgressBar.progress = 0
-        self.sugarProgressBar.progress = 0
-        
-    }
-    
-
 }
 
-extension UIProgressView {
-    
-    func animate(duration: Double) {
-        
-        UIView.animate(withDuration: duration, delay: 0.0, options: .curveLinear, animations: {
-            self.setProgress(1.0, animated: true)
-        }, completion: nil)
-    }
-}
 
 
 
