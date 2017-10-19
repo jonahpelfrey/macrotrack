@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var calorieGoal: Int = 0
     var carbGoal: Int = 0
     
-    var textFields = [UITextField]()
+    var nutrientItems = [UITextField: UILabel]()
     
     //OUTLETS
     @IBOutlet weak var popupCenterConstraint: NSLayoutConstraint!
@@ -45,51 +45,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         setupProgressBars()
+        
+        nutrientItems[proteinTextField] = gramsOfProtein
+        nutrientItems[carbsTextField] = numberOfCarbs
+        nutrientItems[sugarTextField] = numberOfSugars
+        nutrientItems[fatTextField] = numberOfFats
+        nutrientItems[caloriesTextField] = numberOfCalories
     }
     
     
     //FUNCTIONS
+    
+    func populateLabel(textField: UITextField, label: UILabel)
+    {
+        guard let tfText = textField.text,
+                let nutrient = Int(tfText),
+                let labelText = label.text,
+                let oldNutrient = Int(labelText) else { return }
+        
+        label.text = "\(nutrient + oldNutrient)"
+    }
+    
     @IBAction func addNutrients(_ sender: Any) {
         
-        if let pr = proteinTextField.text, !pr.isEmpty {
-            let newProtein = Int(pr)
-            if let oldProtein = Int(gramsOfProtein.text!) {
-                let protein = newProtein! + oldProtein
-                gramsOfProtein.text = "\(protein)"
-            }
-        }
         
-        if let cal = caloriesTextField.text, !cal.isEmpty {
-            let newCalories = Int(cal)
-            if let oldCalories = Int(numberOfCalories.text!) {
-                let calories = newCalories! + oldCalories
-                numberOfCalories.text = "\(calories)"
-            }
-        }
-        
-        if let carb = carbsTextField.text, !carb.isEmpty {
-            let newCarbs = Int(carb)
-            if let oldCarbs = Int(numberOfCarbs.text!) {
-                let carbs = newCarbs! + oldCarbs
-                numberOfCarbs.text = "\(carbs)"
-            }
-        }
-        
-        if let sugar = sugarTextField.text, !sugar.isEmpty {
-            let newSugar = Int(sugar)
-            if let oldSugar = Int(numberOfSugars.text!) {
-                let sugars = newSugar! + oldSugar
-                numberOfSugars.text = "\(sugars)"
-            }
-        }
-        
-        if let fat = fatTextField.text, !fat.isEmpty {
-            let newFat = Int(fat)
-            if let oldFat = Int(numberOfFats.text!) {
-                let fats = newFat! + oldFat
-                numberOfFats.text = "\(fats)"
-            }
-        }
         animateOut()
         clearFields()
     }
