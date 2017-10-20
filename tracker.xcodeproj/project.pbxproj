@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0A554D61F9A679300096DFC /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A554D51F9A679300096DFC /* LogViewController.swift */; };
+		F0A554D81F9A699B00096DFC /* LogViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A554D71F9A699B00096DFC /* LogViewCell.swift */; };
 		F0CFB7BF1F98E30900644835 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CFB7BE1F98E30900644835 /* Nutrient.swift */; };
 		F0D347B31F8E792E003AB921 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D347B21F8E792E003AB921 /* AppDelegate.swift */; };
 		F0D347B51F8E792E003AB921 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D347B41F8E792E003AB921 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F0A554D51F9A679300096DFC /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		F0A554D71F9A699B00096DFC /* LogViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewCell.swift; sourceTree = "<group>"; };
 		F0CFB7BE1F98E30900644835 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		F0D347AF1F8E792E003AB921 /* tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D347B21F8E792E003AB921 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,10 +103,12 @@
 		F0D347B11F8E792E003AB921 /* tracker */ = {
 			isa = PBXGroup;
 			children = (
+				F0A554D51F9A679300096DFC /* LogViewController.swift */,
 				F0D347B21F8E792E003AB921 /* AppDelegate.swift */,
 				F0D347B41F8E792E003AB921 /* ViewController.swift */,
 				F0CFB7BE1F98E30900644835 /* Nutrient.swift */,
 				F0D347B61F8E792E003AB921 /* Main.storyboard */,
+				F0A554D71F9A699B00096DFC /* LogViewCell.swift */,
 				F0D347B91F8E792E003AB921 /* Assets.xcassets */,
 				F0D347BB1F8E792E003AB921 /* LaunchScreen.storyboard */,
 				F0D347BE1F8E792E003AB921 /* Info.plist */,
@@ -264,7 +270,9 @@
 			files = (
 				F0D347B51F8E792E003AB921 /* ViewController.swift in Sources */,
 				F0CFB7BF1F98E30900644835 /* Nutrient.swift in Sources */,
+				F0A554D81F9A699B00096DFC /* LogViewCell.swift in Sources */,
 				F0D347B31F8E792E003AB921 /* AppDelegate.swift in Sources */,
+				F0A554D61F9A679300096DFC /* LogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
