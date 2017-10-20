@@ -11,6 +11,11 @@ import UIKit
 class LogViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var numberProtein: UILabel!
+    @IBOutlet weak var numberCalories: UILabel!
+    @IBOutlet weak var numberCarbs: UILabel!
+    @IBOutlet weak var numberSugar: UILabel!
+    @IBOutlet weak var numberFat: UILabel!
     
     
     override func awakeFromNib() {
